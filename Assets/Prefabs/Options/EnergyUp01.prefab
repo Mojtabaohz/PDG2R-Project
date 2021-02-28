@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7204957422504773080}
   - component: {fileID: -6151277429751416607}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: EnergyUp01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,9 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   option: {fileID: 7204957422504773080}
-  HappinessOutcome: 10
-  EnergyOutcome: -10
-  MoneyOutcome: 10
+  HappinessOutcome: -10
+  EnergyOutcome: 10
+  MoneyOutcome: -10
+  TextBox: {fileID: 7204957423268403965}
 --- !u!1 &7204957423268403967
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,4 +225,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Build solar panels

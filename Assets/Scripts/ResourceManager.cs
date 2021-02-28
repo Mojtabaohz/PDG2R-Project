@@ -8,6 +8,7 @@ namespace UnityTemplateProjects
         [SerializeField] private Slider happiness;
         private int currentHappiness;
         [SerializeField] private Slider energy;
+        private int currentEnergy;
         [SerializeField] private Text Money;
         
         void Start()
@@ -15,20 +16,12 @@ namespace UnityTemplateProjects
             happiness.maxValue = 100;
             energy.maxValue = 100;
         }
-        public void increaseSlider(int amount,Slider slider)
+        public void setSlider(GameObject option)
         {
-            slider.value += amount;
+            happiness.value += option.GetComponent<OptionManager>().HappinessOutcome;
+            energy.value += option.GetComponent<OptionManager>().EnergyOutcome;
         }
 
-        public void setSlider(int amount,Slider slider)
-        {
-            
-        }
-        
-        
-        
-        
-        
-        
+
     }
 }
