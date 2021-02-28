@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82f9b34778364f7a963f8673e624f858
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - happiness: {fileID: 7698177391377395562, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+      type: 3}
+  - energy: {fileID: 4389166508816115463, guid: 47a19c7695cede14990f3ede7b499e92,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
