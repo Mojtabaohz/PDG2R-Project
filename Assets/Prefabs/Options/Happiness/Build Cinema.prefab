@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7471292478125674465}
   - component: {fileID: -7577490280725678400}
   m_Layer: 5
-  m_Name: HappinessUp01
+  m_Name: Build Cinema
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   option: {fileID: 7471292478125674465}
-  HappinessOutcome: 10
+  HappinessOutcome: -10
   EnergyOutcome: -10
-  MoneyOutcome: -10
+  MoneyOutcome: 10
   TextBox: {fileID: 7471292479760383840}
 --- !u!1 &7471292479760383842
 GameObject:
@@ -214,4 +214,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Build public park
+  m_Text: Build Cinema

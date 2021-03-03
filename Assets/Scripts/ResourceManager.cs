@@ -10,6 +10,8 @@ namespace UnityTemplateProjects
         [SerializeField] private Slider energy;
         private int currentEnergy;
         [SerializeField] private Text Money;
+
+
         
         void Start()
         {
@@ -21,7 +23,5 @@ namespace UnityTemplateProjects
             happiness.value += option.GetComponent<OptionManager>().HappinessOutcome;
             energy.value += option.GetComponent<OptionManager>().EnergyOutcome;
         }
-
-
     }
 }
