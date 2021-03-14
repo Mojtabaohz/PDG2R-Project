@@ -8,6 +8,7 @@ public class rdmButton : MonoBehaviour
     public List<GameObject> happinessButtons;
     public List<GameObject> moneyButtons;
     public GameObject canvas;
+    public int active;
 
 
     void Start()
@@ -19,6 +20,7 @@ public class rdmButton : MonoBehaviour
         GameObject EB = Instantiate(energyButtons[erdm]) as GameObject;
         GameObject HB = Instantiate(happinessButtons[hrdm]) as GameObject;
         GameObject MB = Instantiate(moneyButtons[mrdm]) as GameObject;
+
         EB.transform.SetParent(canvas.transform, false);
         HB.transform.SetParent(canvas.transform, false);
         MB.transform.SetParent(canvas.transform, false);
@@ -26,6 +28,11 @@ public class rdmButton : MonoBehaviour
         Debug.Log(erdm);
         Debug.Log(hrdm);
         Debug.Log(mrdm);
+
+        EB.SetActive(false);
+        HB.SetActive(false);
+        MB.SetActive(false);
+
     }
 
     void Update()
