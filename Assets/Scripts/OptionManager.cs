@@ -17,6 +17,7 @@ public class OptionManager : MonoBehaviour
     [SerializeField] private Text TextBox;
 
     private ResourceManager resources;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,6 @@ public class OptionManager : MonoBehaviour
         resources = GameObject.FindGameObjectWithTag("Resourcemanager").GetComponent<ResourceManager>();
         resources.setSlider(gameObject);
         //GameObject.FindWithTag("Resourcemanager").GetComponent<ResourceManager>().setSlider(HappinessOutcome,ResourceManager.FindObjectOfType<Slider>());
-
     }
     // Update is called once per frame
     void Update()

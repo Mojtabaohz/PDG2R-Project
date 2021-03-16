@@ -16,6 +16,11 @@ public class rdmButton : MonoBehaviour
 
     public Button start;
     public Button random;
+    public Button end;
+
+    private GameObject EB;
+    private GameObject HB;
+    private GameObject MB;
 
     void Start()
     {
@@ -24,6 +29,9 @@ public class rdmButton : MonoBehaviour
 
         Button randomy = random.GetComponent<Button>();
         randomy.onClick.AddListener(clickRandom);
+
+        Button endy = end.GetComponent<Button>();
+        endy.onClick.AddListener(clickEnd);
     }
 
     void Update()
@@ -37,9 +45,9 @@ public class rdmButton : MonoBehaviour
         int hrdm = Random.Range(0, happinessButtons.Count);
         int mrdm = Random.Range(0, moneyButtons.Count);
 
-        GameObject EB = Instantiate(energyButtons[erdm]) as GameObject;
-        GameObject HB = Instantiate(happinessButtons[hrdm]) as GameObject;
-        GameObject MB = Instantiate(moneyButtons[mrdm]) as GameObject;
+        EB = Instantiate(energyButtons[erdm]) as GameObject;
+        HB = Instantiate(happinessButtons[hrdm]) as GameObject;
+        MB = Instantiate(moneyButtons[mrdm]) as GameObject;
 
         EB.transform.SetParent(canvas.transform, false);
         HB.transform.SetParent(canvas.transform, false);
@@ -53,13 +61,17 @@ public class rdmButton : MonoBehaviour
 
     void clickRandom()
     {
+        Destroy(EB);
+        Destroy(MB);
+        Destroy(HB);
+
         int erdm = Random.Range(0, energyButtons.Count);
         int hrdm = Random.Range(0, happinessButtons.Count);
         int mrdm = Random.Range(0, moneyButtons.Count);
 
-        GameObject EB = Instantiate(energyButtons[erdm]) as GameObject;
-        GameObject HB = Instantiate(happinessButtons[hrdm]) as GameObject;
-        GameObject MB = Instantiate(moneyButtons[mrdm]) as GameObject;
+        EB = Instantiate(energyButtons[erdm]) as GameObject;
+        HB = Instantiate(happinessButtons[hrdm]) as GameObject;
+        MB = Instantiate(moneyButtons[mrdm]) as GameObject;
 
         EB.transform.SetParent(canvas.transform, false);
         HB.transform.SetParent(canvas.transform, false);
@@ -68,5 +80,12 @@ public class rdmButton : MonoBehaviour
         Debug.Log(erdm);
         Debug.Log(hrdm);
         Debug.Log(mrdm);
+    }
+
+    void clickEnd()
+    {
+        Destroy(EB);
+        Destroy(MB);
+        Destroy(HB);
     }
 }
