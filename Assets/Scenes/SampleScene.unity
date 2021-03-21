@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309069309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 700f501b193d4c99a889f639d887e83d, type: 3}
   m_Name: 
@@ -2300,6 +2300,16 @@ PrefabInstance:
     - target: {fileID: 5946443223269150115, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698177391377395562, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698177391377395562, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+        type: 3}
+      propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8782507990878377167, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,

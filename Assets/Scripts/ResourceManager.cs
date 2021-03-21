@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UnityTemplateProjects
@@ -18,6 +19,24 @@ namespace UnityTemplateProjects
             happiness.maxValue = 100;
             energy.maxValue = 100;
         }
+
+        private void Update()
+        {
+            CheckResources();
+        }
+
+        void CheckResources()
+        {
+            if (energy.GetComponent<Slider>().value < 10)
+            {
+                FindObjectOfType<CityTracker>().NegativeImpact();
+            }
+            else
+            {
+                FindObjectOfType<CityTracker>().PositiveImpact();
+            }
+        }
+        
         public void setSlider(GameObject option)
         {
             happiness.value += option.GetComponent<OptionManager>().HappinessOutcome;
