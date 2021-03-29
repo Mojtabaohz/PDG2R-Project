@@ -835,6 +835,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1217831229}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &133990249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7911810935918139077, guid: c669a87d9a7cbcc4d9a6c4403a551080,
+    type: 3}
+  m_PrefabInstance: {fileID: 2478315310420275156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &138200426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2885511658602408037, guid: 1530bd3f3969dfe418ee3f07520c37bd,
@@ -3665,6 +3671,8 @@ MonoBehaviour:
   - {fileID: 299698355}
   - {fileID: 1182354113}
   - {fileID: 1761882511}
+  DamagedBuildings: []
+  HealthyBuildings: []
 --- !u!4 &634629718
 Transform:
   m_ObjectHideFlags: 0
@@ -4534,7 +4542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &791333955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7034,6 +7042,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1325499403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6410934391136436588, guid: c669a87d9a7cbcc4d9a6c4403a551080,
+    type: 3}
+  m_PrefabInstance: {fileID: 2478315310420275156}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1336781904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8309,7 +8323,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 2.1417e-41, z: 0, w: -1.2073675e-15}
+  m_BoundingSphereOverride: {x: 0, y: -9.875412, z: 6.29e-43, w: -0.000000018656593}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -9034,7 +9048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happiness: {fileID: 930860638}
   energy: {fileID: 1611262116}
-  Money: {fileID: 2093123120}
+  money: 0
+  moneyText: {fileID: 2093123120}
 --- !u!4 &1669231538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5396576398855832661, guid: 3e075155a53e288478a4e8c745f84358,
@@ -13351,6 +13366,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2478315310420275156}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6538064729322052411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6538064729322052409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5724b41c5c1041e43be118ae2c3611fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthyBuilding: {fileID: 1325499403}
+  DamagedBuildibg: {fileID: 133990249}
+  damaged: 0
 --- !u!4 &6790120681983723837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 967800591505195805, guid: 2eeaf26eef9151c47a9ea2297a92554a,
