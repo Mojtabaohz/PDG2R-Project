@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7286085231256425388}
+  - component: {fileID: 549611145622038413}
   m_Layer: 0
   m_Name: Building_03fbx
   m_TagString: Untagged
@@ -114,6 +115,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &549611145622038413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950699725243681046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5724b41c5c1041e43be118ae2c3611fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthyBuilding: {fileID: 8749216518608241038}
+  DamagedBuildibg: {fileID: 839150063472016166}
+  damaged: 0
 --- !u!1 &8749216518608241038
 GameObject:
   m_ObjectHideFlags: 0

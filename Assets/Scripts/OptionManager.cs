@@ -9,7 +9,7 @@ public class OptionManager : MonoBehaviour
 {
     public Button option;
     [SerializeField] public int HappinessOutcome;
-    private int value = 10;
+    
     [SerializeField] public int EnergyOutcome;
 
     [SerializeField] public int MoneyOutcome;

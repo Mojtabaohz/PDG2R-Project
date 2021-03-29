@@ -5,7 +5,7 @@ using UnityEngine;
 
     public class collectibleBubbles : MonoBehaviour
     {
-        [SerializeField] private GameObject[] moneyBag;
+        [SerializeField] private GameObject[] moneyBag = null;
         [SerializeField] private float _bubbleSR = 1;
         private float _moneyBagTimer;
         private void Update()
