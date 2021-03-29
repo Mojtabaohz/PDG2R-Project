@@ -19,7 +19,7 @@ public class CityTracker : MonoBehaviour
     {
         foreach (GameObject building in Buildings)
         {
-            Debug.Log(building);
+            //Debug.Log(building);
             building.GetComponent<ModularBuilding>().UpdatePrefab();
             HealthyBuildings.Add(building);
         }

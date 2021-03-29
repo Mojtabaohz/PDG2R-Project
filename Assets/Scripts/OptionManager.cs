@@ -18,9 +18,12 @@ public class OptionManager : MonoBehaviour
 
     private ResourceManager resources;
 
+    private rdmButton button;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        resources = GameObject.FindGameObjectWithTag("Resourcemanager").GetComponent<ResourceManager>();
+        button = GameObject.FindObjectOfType<rdmButton>().GetComponent<rdmButton>();
         Button btn = option.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         
@@ -28,8 +31,9 @@ public class OptionManager : MonoBehaviour
 
     void TaskOnClick(){
         Debug.Log ("You have chosen the option!");
-        resources = GameObject.FindGameObjectWithTag("Resourcemanager").GetComponent<ResourceManager>();
         resources.setSlider(gameObject);
+        button.DestroyButtons();
+        button.PrepareButtons();
         //GameObject.FindWithTag("Resourcemanager").GetComponent<ResourceManager>().setSlider(HappinessOutcome,ResourceManager.FindObjectOfType<Slider>());
     }
     // Update is called once per frame

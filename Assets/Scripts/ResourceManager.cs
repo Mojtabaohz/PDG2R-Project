@@ -12,7 +12,7 @@ namespace UnityTemplateProjects
         //private int currentEnergy;
         [SerializeField] private int money;
         [SerializeField] private Text moneyText;
-
+        
         private int negativeEnergy = 40;
         private int negativHappiness;
 
@@ -36,15 +36,11 @@ namespace UnityTemplateProjects
             Debug.Log("before if" +negativeEnergy);
             if (energy.GetComponent<Slider>().value < negativeEnergy)
             {
-                Debug.Log("inside if" +negativeEnergy);
-                negativeEnergy -= 10;
                 FindObjectOfType<CityTracker>().NegativeImpact();
                 
             }
             else if (energy.GetComponent<Slider>().value >= negativeEnergy)
             {
-                Debug.Log("inside else if" +negativeEnergy);
-                negativeEnergy += 10;
                 FindObjectOfType<CityTracker>().PositiveImpact();
             }
             
@@ -57,6 +53,7 @@ namespace UnityTemplateProjects
             money += option.GetComponent<OptionManager>().MoneyOutcome;
             moneyText.text = money.ToString();
             CheckResources();
+            
         }
         
         
