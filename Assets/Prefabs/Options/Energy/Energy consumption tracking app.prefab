@@ -145,8 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   option: {fileID: 7204957422504773080}
   HappinessOutcome: -10
-  EnergyOutcome: 10
-  MoneyOutcome: 10
+  EnergyOutcome: 5
+  MoneyOutcome: 5
   TextBox: {fileID: 7204957423268403965}
 --- !u!1 &7204957423268403967
 GameObject:

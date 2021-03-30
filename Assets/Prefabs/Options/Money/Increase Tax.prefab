@@ -213,5 +213,5 @@ MonoBehaviour:
   option: {fileID: 3972875108658038487}
   HappinessOutcome: -10
   EnergyOutcome: 0
-  MoneyOutcome: 20
+  MoneyOutcome: 10
   TextBox: {fileID: 3972875107885001534}
