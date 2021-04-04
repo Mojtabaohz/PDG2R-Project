@@ -34,6 +34,7 @@ public class OptionManager : MonoBehaviour
         resources.setSlider(gameObject);
         button.DestroyButtons();
         button.PrepareButtons();
+        resources.YearProgress();
         //GameObject.FindWithTag("Resourcemanager").GetComponent<ResourceManager>().setSlider(HappinessOutcome,ResourceManager.FindObjectOfType<Slider>());
     }
     // Update is called once per frame

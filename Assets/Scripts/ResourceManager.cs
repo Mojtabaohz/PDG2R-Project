@@ -12,6 +12,9 @@ namespace UnityTemplateProjects
         //private int currentEnergy;
         [SerializeField] private int money;
         [SerializeField] private Text moneyText;
+        [SerializeField] private Text currentYearText;
+        private int currentYear;
+        [SerializeField] private Slider yearsSlider;
         
         private int negativeEnergy = 40;
         private int negativHappiness;
@@ -27,6 +30,10 @@ namespace UnityTemplateProjects
             energy.maxValue = 100;
             energy.value = 50;
             money = 75;
+            currentYear = 2021;
+            currentYearText.text = currentYear.ToString();
+            yearsSlider.maxValue = 50;
+            yearsSlider.value = 0;
             moneyText.text = money.ToString();
         }
         
@@ -43,7 +50,6 @@ namespace UnityTemplateProjects
             {
                 FindObjectOfType<CityTracker>().PositiveImpact();
             }
-            
         }
         
         public void setSlider(GameObject option)
@@ -53,9 +59,23 @@ namespace UnityTemplateProjects
             money += option.GetComponent<OptionManager>().MoneyOutcome;
             moneyText.text = money.ToString();
             CheckResources();
+        }
+
+        public void YearProgress()
+        {
+            yearsSlider.value += 10;
+            currentYear += 10;
+            currentYearText.text = currentYear.ToString();
+        }
+
+        public void DelayCall()
+        {
             
         }
-        
-        
+
+        public void InvisUI()
+        {
+            
+        }
     }
 }
