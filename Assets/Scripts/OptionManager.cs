@@ -15,6 +15,7 @@ public class OptionManager : MonoBehaviour
     [SerializeField] public int MoneyOutcome;
 
     [SerializeField] private Text TextBox;
+    
 
     private ResourceManager resources;
 
@@ -30,7 +31,8 @@ public class OptionManager : MonoBehaviour
     }
 
     void TaskOnClick(){
-        Debug.Log ("You have chosen the option!");
+        //Debug.Log ("You have chosen the option!");
+        resources.CallDelay();
         resources.setSlider(gameObject);
         button.DestroyButtons();
         button.PrepareButtons();

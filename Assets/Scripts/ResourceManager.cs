@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ namespace UnityTemplateProjects
         [SerializeField] private Text currentYearText;
         private int currentYear;
         [SerializeField] private Slider yearsSlider;
+        [SerializeField] public CanvasGroup optionsCanvas;
+        
         
         private int negativeEnergy = 40;
         private int negativHappiness;
@@ -40,11 +43,9 @@ namespace UnityTemplateProjects
 
         void CheckResources()
         {
-            Debug.Log("before if" +negativeEnergy);
             if (energy.GetComponent<Slider>().value < negativeEnergy)
             {
                 FindObjectOfType<CityTracker>().NegativeImpact();
-                
             }
             else if (energy.GetComponent<Slider>().value >= negativeEnergy)
             {
@@ -68,14 +69,25 @@ namespace UnityTemplateProjects
             currentYearText.text = currentYear.ToString();
         }
 
-        public void DelayCall()
+        private IEnumerator DelayCall(float time)
         {
-            
+            yield return new WaitForSeconds(time);
+            Debug.Log("UIActivated");
+            //TODO: Activate UI
+            LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
         }
 
-        public void InvisUI()
+        public void CallDelay()
         {
-            
+            //TODO: Deactivate UI
+            LeanTween.alphaCanvas(optionsCanvas, 0, 0.9f).setEase(LeanTweenType.easeOutCirc);
+            StartCoroutine(DelayCall(4f));
+        }
+
+        public void ActivateUI()
+        {
+            Debug.Log("UIActivated");
+            LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
         }
     }
 }
