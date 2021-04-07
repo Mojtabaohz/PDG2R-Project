@@ -20,7 +20,6 @@ public class sreButton : MonoBehaviour
         EnB.transform.SetParent(canvas.transform, false);
         SB.transform.SetParent(canvas.transform, false);
         RB.transform.SetParent(canvas.transform, false);
-
     }
 
     // Update is called once per frame
