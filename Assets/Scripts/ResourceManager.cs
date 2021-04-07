@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UnityTemplateProjects
@@ -17,6 +18,8 @@ namespace UnityTemplateProjects
         private int currentYear;
         [SerializeField] private Slider yearsSlider;
         [SerializeField] public CanvasGroup optionsCanvas;
+        [SerializeField] private GameObject endGamePanel;
+        private bool gameEnded;
         
         
         private int negativeEnergy = 40;
@@ -28,6 +31,8 @@ namespace UnityTemplateProjects
         
         void Start()
         {
+            gameEnded = false;
+            endGamePanel.SetActive(false);
             happiness.maxValue = 100;
             happiness.value = 50;
             energy.maxValue = 100;
@@ -64,30 +69,61 @@ namespace UnityTemplateProjects
 
         public void YearProgress()
         {
-            yearsSlider.value += 10;
-            currentYear += 10;
-            currentYearText.text = currentYear.ToString();
+            if (currentYear <= 2070)
+            {
+                yearsSlider.value += 10;
+                currentYear += 10;
+                currentYearText.text = currentYear.ToString();
+            }
+            else
+            {
+                EndGame();
+            }
+            
         }
 
         private IEnumerator DelayCall(float time)
         {
             yield return new WaitForSeconds(time);
-            Debug.Log("UIActivated");
+            //Debug.Log("UIActivated");
             //TODO: Activate UI
-            LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
+            ActivateUI();
+            //LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
         }
 
         public void CallDelay()
         {
             //TODO: Deactivate UI
+            optionsCanvas.blocksRaycasts = false;
             LeanTween.alphaCanvas(optionsCanvas, 0, 0.9f).setEase(LeanTweenType.easeOutCirc);
             StartCoroutine(DelayCall(4f));
         }
 
         public void ActivateUI()
         {
-            Debug.Log("UIActivated");
+            //Debug.Log("UIActivated");
+            if (!gameEnded)
+            {
+                optionsCanvas.blocksRaycasts = true;
+            }
             LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
+            
+        }
+
+        private void EndGame()
+        {
+            gameEnded = true;
+            Debug.Log("UI Disabled");
+            endGamePanel.SetActive(true);
+            optionsCanvas.blocksRaycasts = false;
+            StartCoroutine(ReloadScene());
+        }
+
+        private IEnumerator ReloadScene()
+        {
+            yield return new WaitForSeconds(10f);
+            Debug.Log("scene Reloaded");
+            SceneManager.LoadScene("MelvinTest scene") ;
         }
     }
 }
