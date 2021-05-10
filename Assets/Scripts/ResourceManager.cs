@@ -12,6 +12,7 @@ namespace UnityTemplateProjects
         //private int currentHappiness;
         [SerializeField] private Slider energy;
         //private int currentEnergy;
+        [SerializeField] private Slider pollution;
         [SerializeField] private int money;
         [SerializeField] private Text moneyText;
         [SerializeField] private Text currentYearText;
@@ -37,6 +38,8 @@ namespace UnityTemplateProjects
             happiness.value = 50;
             energy.maxValue = 100;
             energy.value = 50;
+            pollution.maxValue = 100;
+            pollution.value = 5;
             money = 75;
             currentYear = 2021;
             currentYearText.text = currentYear.ToString();
@@ -62,6 +65,7 @@ namespace UnityTemplateProjects
         {
             happiness.value += option.GetComponent<OptionManager>().HappinessOutcome;
             energy.value += option.GetComponent<OptionManager>().EnergyOutcome;
+            pollution.value += option.GetComponent<OptionManager>().PollutionOutcome;
             money += option.GetComponent<OptionManager>().MoneyOutcome;
             moneyText.text = money.ToString();
             CheckResources();

@@ -8,9 +8,9 @@ using ResourceManager = UnityTemplateProjects.ResourceManager;
 public class OptionManager : MonoBehaviour
 {
     public Button option;
-    [SerializeField] public int HappinessOutcome;
-    
-    [SerializeField] public int EnergyOutcome;
+    public int HappinessOutcome;
+    public int EnergyOutcome;
+    public int PollutionOutcome;
 
     [SerializeField] public int MoneyOutcome;
 
