@@ -21,6 +21,7 @@ namespace UnityTemplateProjects
         [SerializeField] public CanvasGroup optionsCanvas;
         [SerializeField] private GameObject endGamePanel;
         private bool gameEnded;
+
         
         
         private int negativeEnergy = 40;
@@ -129,5 +130,6 @@ namespace UnityTemplateProjects
             Debug.Log("scene Reloaded");
             SceneManager.LoadScene("MelvinTest scene") ;
         }
+
     }
 }
