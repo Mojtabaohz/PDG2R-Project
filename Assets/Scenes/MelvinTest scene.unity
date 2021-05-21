@@ -13423,9 +13423,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de9f55b1140ed842ae99f4f4a83b952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solarPanels: {fileID: 7124421297541815032, guid: 65db6b209c8d9474298ef1216d6b2e2b,
+  solarPanels0: {fileID: 2897930871383678942, guid: f597052b7c4018d4fada157bd7f85da5,
     type: 3}
-  windTurbines: {fileID: 914239005490249699, guid: 12f8e436091a3c84cbafc0097e1d3bb1,
+  solarPanels1: {fileID: 1541571448688713151, guid: 4f08cbafb7f29e141a7c12e6803bcb19,
+    type: 3}
+  solarPanels2: {fileID: 2631641776958730520, guid: b96405cd074deb94ab55db421f2007dc,
+    type: 3}
+  solarPanels3: {fileID: 6741170030735538471, guid: f7eabe2c22b75c54c894986cf619b819,
+    type: 3}
+  windTurbines: {fileID: 1634790359383604091, guid: 12f8e436091a3c84cbafc0097e1d3bb1,
     type: 3}
 --- !u!1001 &1133419167
 PrefabInstance:

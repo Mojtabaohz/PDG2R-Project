@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ButtonEvents : MonoBehaviour
 {
-    public GameObject solarPanels;
+    public GameObject solarPanels0;
+    public GameObject solarPanels1;
+    public GameObject solarPanels2;
+    public GameObject solarPanels3;
+
     public GameObject windTurbines;
 
-    private bool panelsBuilt;
+    private int panelsBuilt;
     private bool turbinesBuilt;
 
     void Awake()
     {
-        panelsBuilt = false;
+        panelsBuilt = 0;
         turbinesBuilt = false;
     }
 
@@ -35,16 +39,40 @@ public class ButtonEvents : MonoBehaviour
 
     //Instantiate solarpanels prefab when function is called
     void BuildSolarPanels()
-    {
-        if(!panelsBuilt)
+    { 
+        // if(!panelsBuilt)
+        // {
+        //     Instantiate(solarPanels, new Vector3(0, 0, 0), Quaternion.identity);
+        //     panelsBuilt = true;
+        // }
+        // else
+        // {
+        //     //could change this to accomodate gradual increase of panels when same option has been clicked multiple times
+        //     Debug.Log("Solar panels are already built");
+        // }
+
+        switch(panelsBuilt)
         {
-            Instantiate(solarPanels, new Vector3(0, 0, 0), Quaternion.identity);
-            panelsBuilt = true;
-        }
-        else
-        {
-            //could change this to accomodate gradual increase of panels when same option has been clicked multiple times
-            Debug.Log("Solar panels are already built");
+            case 0:
+                Instantiate(solarPanels0, new Vector3(0, 0, 0), Quaternion.identity);
+                panelsBuilt++;
+                break;
+            case 1:
+                Instantiate(solarPanels1, new Vector3(0, 0, 0), Quaternion.identity);
+                panelsBuilt++;
+                break;
+            case 2:
+                Instantiate(solarPanels2, new Vector3(0, 0, 0), Quaternion.identity);
+                panelsBuilt++;
+                break;                
+            case 3:
+                Instantiate(solarPanels3, new Vector3(0, 0, 0), Quaternion.identity);
+                panelsBuilt++;
+                break;
+            default:
+                Debug.Log("Solar panels are maxed out");
+                break;
+
         }
     }
 
