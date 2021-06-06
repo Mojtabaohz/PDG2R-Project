@@ -11,17 +11,15 @@ public class OptionManager : MonoBehaviour
     public int HappinessOutcome;
     public int EnergyOutcome;
     public int PollutionOutcome;
+    public int MoneyOutcome;
     
-    [SerializeField] public int MoneyOutcome;
-
-    [SerializeField] private Text TextBox;
+    //[SerializeField] private Text TextBox;
     
 
     private ResourceManager resources;
     private ButtonEvents buttonevents;
-
     private rdmButton button;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         resources = GameObject.FindGameObjectWithTag("Resourcemanager").GetComponent<ResourceManager>();
@@ -42,11 +40,7 @@ public class OptionManager : MonoBehaviour
         //GameObject.FindWithTag("Resourcemanager").GetComponent<ResourceManager>().setSlider(HappinessOutcome,ResourceManager.FindObjectOfType<Slider>());
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
     
 }

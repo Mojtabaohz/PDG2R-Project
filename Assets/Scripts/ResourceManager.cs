@@ -15,6 +15,18 @@ namespace UnityTemplateProjects
         [SerializeField] private Slider pollution;
         [SerializeField] private int money;
         [SerializeField] private Text moneyText;
+
+        [SerializeField] private int happinessOutcome;
+        [SerializeField] private int energyOutcome;
+        [SerializeField] private int pollutionOutcome;
+        [SerializeField] private int moneyOutcome;
+        
+        [SerializeField] private Text happinessOutcomeText;
+        [SerializeField] private Text energyOutcomeText;
+        [SerializeField] private Text pollutionOutcomeText;
+        [SerializeField] private Text moneyOutcomeText;
+        
+        
         [SerializeField] private Text currentYearText;
         private int currentYear;
         [SerializeField] private Slider yearsSlider;
@@ -33,6 +45,7 @@ namespace UnityTemplateProjects
         
         void Start()
         {
+            HideOutcome();
             gameEnded = false;
             endGamePanel.SetActive(false);
             happiness.maxValue = 100;
@@ -61,14 +74,23 @@ namespace UnityTemplateProjects
                 FindObjectOfType<CityTracker>().PositiveImpact();
             }
         }
-        
+
+        private void SetOutcome(GameObject option)
+        {
+            happinessOutcome = option.GetComponent<OptionManager>().HappinessOutcome;
+            energyOutcome = option.GetComponent<OptionManager>().EnergyOutcome;
+            pollutionOutcome = option.GetComponent<OptionManager>().PollutionOutcome;
+            moneyOutcome = option.GetComponent<OptionManager>().MoneyOutcome;
+        }
         public void setSlider(GameObject option)
         {
-            happiness.value += option.GetComponent<OptionManager>().HappinessOutcome;
-            energy.value += option.GetComponent<OptionManager>().EnergyOutcome;
-            pollution.value += option.GetComponent<OptionManager>().PollutionOutcome;
-            money += option.GetComponent<OptionManager>().MoneyOutcome;
+            SetOutcome(option);
+            happiness.value += happinessOutcome;
+            energy.value += energyOutcome;
+            pollution.value += pollutionOutcome;
+            money += moneyOutcome;
             moneyText.text = money.ToString();
+            SetOutcome();
             CheckResources();
         }
 
@@ -94,6 +116,12 @@ namespace UnityTemplateProjects
             //TODO: Activate UI
             ActivateUI();
             //LeanTween.alphaCanvas(optionsCanvas, 1, 0.9f).setEase(LeanTweenType.easeInCirc);
+        }
+
+        private IEnumerator HideOutcomeDelay(float time)
+        {
+            yield return new WaitForSeconds(time);
+            HideOutcome();
         }
 
         public void CallDelay()
@@ -124,6 +152,36 @@ namespace UnityTemplateProjects
             StartCoroutine(ReloadScene());
         }
 
+        private void HideOutcome()
+        {
+            happinessOutcomeText.gameObject.SetActive(false);
+            energyOutcomeText.gameObject.SetActive(false);
+            pollutionOutcomeText.gameObject.SetActive(false);
+            moneyOutcomeText.gameObject.SetActive(false);
+            
+        }
+
+        private void SetOutcome()
+        {
+            happinessOutcomeText.text = happinessOutcome.ToString();
+            energyOutcomeText.text = happinessOutcome.ToString();
+            pollutionOutcomeText.text = pollutionOutcome.ToString();
+            moneyOutcomeText.text = moneyOutcome.ToString();
+            ShowOutcome();
+        }
+
+        private void ShowOutcome()
+        {
+            happinessOutcomeText.gameObject.SetActive(true);
+            happinessOutcomeText.GetComponent<TweenAnimate>().Tween();
+            energyOutcomeText.gameObject.SetActive(true);
+            energyOutcomeText.GetComponent<TweenAnimate>().Tween();
+            pollutionOutcomeText.gameObject.SetActive(true);
+            pollutionOutcomeText.GetComponent<TweenAnimate>().Tween();
+            moneyOutcomeText.gameObject.SetActive(true);
+            moneyOutcomeText.GetComponent<TweenAnimate>().Tween();
+            StartCoroutine(HideOutcomeDelay(2f));
+        }
         private IEnumerator ReloadScene()
         {
             yield return new WaitForSeconds(10f);
