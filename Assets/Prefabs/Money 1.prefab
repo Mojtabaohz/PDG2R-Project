@@ -413,6 +413,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Money
       objectReference: {fileID: 0}
+    - target: {fileID: 9027765605938073168, guid: e80ca2d01091bb148b4bc945d874a4d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9027765605938073169, guid: e80ca2d01091bb148b4bc945d874a4d1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -457,6 +462,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 48.034424
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027765605938073169, guid: e80ca2d01091bb148b4bc945d874a4d1,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027765605938073169, guid: e80ca2d01091bb148b4bc945d874a4d1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9027765605938073169, guid: e80ca2d01091bb148b4bc945d874a4d1,
         type: 3}

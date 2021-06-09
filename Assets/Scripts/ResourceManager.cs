@@ -33,9 +33,8 @@ namespace UnityTemplateProjects
         [SerializeField] public CanvasGroup optionsCanvas;
         [SerializeField] private GameObject endGamePanel;
         private bool gameEnded;
+        
 
-        
-        
         private int negativeEnergy = 40;
         private int negativHappiness;
 
@@ -60,9 +59,11 @@ namespace UnityTemplateProjects
             yearsSlider.maxValue = 50;
             yearsSlider.value = 0;
             moneyText.text = money.ToString();
+            
+            happiness.gameObject.GetComponent<HappinessManager>().CheckHappiness();
         }
         
-
+        
         void CheckResources()
         {
             if (energy.GetComponent<Slider>().value < negativeEnergy)
@@ -84,8 +85,10 @@ namespace UnityTemplateProjects
         }
         public void setSlider(GameObject option)
         {
+            
             SetOutcome(option);
             happiness.value += happinessOutcome;
+            happiness.gameObject.GetComponent<HappinessManager>().CheckHappiness();
             energy.value += energyOutcome;
             pollution.value += pollutionOutcome;
             money += moneyOutcome;

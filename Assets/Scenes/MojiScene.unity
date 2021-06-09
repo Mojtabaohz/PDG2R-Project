@@ -859,44 +859,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 285293620}
     m_Modifications:
+    - target: {fileID: 2523578380629278252, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3472004233703660123, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
       propertyPath: m_Name
       value: Happiness
       objectReference: {fileID: 0}
-    - target: {fileID: 5129153234690796842, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+    - target: {fileID: 4748918105655422202, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5946443223269150115, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5485994943603716339, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+        type: 3}
+      propertyPath: happiness
+      value: 
+      objectReference: {fileID: 1829695710}
     - target: {fileID: 5946443223269150115, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5946443223269150115, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+    - target: {fileID: 8411878846523878561, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698177391377395562, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
-        type: 3}
-      propertyPath: m_Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698177391377395562, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
-        type: 3}
-      propertyPath: m_Colors.m_ColorMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8782507990878377167, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
-        type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8782507990878377167, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
@@ -1007,6 +997,11 @@ PrefabInstance:
     - target: {fileID: 8799896739344758044, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8901513219305849965, guid: e0a1677cfcfe9ab4381e3c7828c1b7b2,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4892,9 +4887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700f501b193d4c99a889f639d887e83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyBag:
-  - {fileID: 5920453749894128893, guid: 3abcf79ddd124cb4698549f8d166da5e, type: 3}
-  _bubbleSR: 5
+  happinessBubbles: []
+  _bubbleSpawnRate: 1
 --- !u!114 &410156221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10820,7 +10814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &918795554
 Transform:
   m_ObjectHideFlags: 0
@@ -13213,7 +13207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b4414b1394c6447a0ee961ee6e99fc, type: 3}
---- !u!1 &1114574827
+--- !u!1 &1109650567
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13221,72 +13215,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1114574828}
-  - component: {fileID: 1114574830}
-  - component: {fileID: 1114574829}
+  - component: {fileID: 1109650568}
+  - component: {fileID: 1109650569}
   m_Layer: 0
-  m_Name: Happiness Icon
+  m_Name: HappinessBubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1114574828
-RectTransform:
+--- !u!4 &1109650568
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114574827}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1109650567}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1829695709}
-  m_RootOrder: 3
+  m_Father: {fileID: 1141392126}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -172.40005, y: -19.999977}
-  m_SizeDelta: {x: 73.708496, y: 73.708496}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1114574829
+--- !u!114 &1109650569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114574827}
+  m_GameObject: {fileID: 1109650567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 700f501b193d4c99a889f639d887e83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f93b88d61ffaa7047995b6be4b9e82ba, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1114574830
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114574827}
-  m_CullTransparentMesh: 0
+  happinessBubbles:
+  - {fileID: 4843413237217352699, guid: ea3b46dce94eab94099b3d2a73559a10, type: 3}
+  - {fileID: 9216602603280257067, guid: d75dc9f8a0345614e934b0c2bd7d77c4, type: 3}
+  - {fileID: 8923209665097082260, guid: 1943a30451d632a45b0a800dee1040ab, type: 3}
+  - {fileID: 1288917343063540475, guid: 6da9e9924987a4243b59015da128ff42, type: 3}
+  _bubbleSpawnRate: 1
 --- !u!1001 &1119832722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13804,6 +13773,7 @@ Transform:
   - {fileID: 1794873442}
   - {fileID: 1198274827}
   - {fileID: 1793862343}
+  - {fileID: 1109650568}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
