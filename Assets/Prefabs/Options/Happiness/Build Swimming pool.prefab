@@ -133,10 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   option: {fileID: 7471292478125674465}
-  HappinessOutcome: -5
+  HappinessOutcome: 5
   EnergyOutcome: -5
+  PollutionOutcome: 0
   MoneyOutcome: 10
-  TextBox: {fileID: 7471292479760383840}
 --- !u!1 &7471292479760383842
 GameObject:
   m_ObjectHideFlags: 0
