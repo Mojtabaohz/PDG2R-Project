@@ -7,8 +7,8 @@
      {
          // Creating everything needed to demonstrate this from a single cube
          player = this.transform;
-         GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Plane);
-         floor.transform.position = player.position + 0.5f*Vector3.down;
+         //GameObject floor = GameObject.CreatePrimitive(PrimitiveType.Plane);
+         //floor.transform.position = player.position + 0.5f*Vector3.down;
          sun = GameObject.CreatePrimitive(PrimitiveType.Sphere);
          sun.name = "sun";
          sun.GetComponent<Renderer>().material.color=Color.yellow;
