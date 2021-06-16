@@ -189,7 +189,7 @@ namespace UnityTemplateProjects
         {
             yield return new WaitForSeconds(10f);
             Debug.Log("scene Reloaded");
-            SceneManager.LoadScene("MelvinTest scene") ;
+            SceneManager.LoadScene("MojiScene") ;
         }
 
     }
