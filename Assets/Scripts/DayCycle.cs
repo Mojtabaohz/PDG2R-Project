@@ -22,7 +22,7 @@
          moon.AddComponent<Light>().type = LightType.Directional;
          moon.GetComponent<Light>().shadows = LightShadows.Soft;
          moon.GetComponent<Light>().color = new Color(0.5f, 0.81f, 1f);;
-         moon.GetComponent<Light>().intensity = 0.9f;
+         moon.GetComponent<Light>().intensity = 1f;
          moon.GetComponent<Renderer>().castShadows = false;
      }
  

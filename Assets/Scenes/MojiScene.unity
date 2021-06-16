@@ -40689,8 +40689,8 @@ MonoBehaviour:
   sun: {fileID: 0}
   moon: {fileID: 0}
   radius: 100
-  daytimeSkyColor: {r: 0.9, g: 0.81, b: 0.52, a: 1}
-  middaySkyColor: {r: 1, g: 0.60054535, b: 0.11792451, a: 1}
+  daytimeSkyColor: {r: 0.9150943, g: 0.869037, b: 0.7208526, a: 1}
+  middaySkyColor: {r: 0.9433962, g: 0.836478, b: 0.7075472, a: 1}
   nighttimeSkyColor: {r: 0.5, g: 0.81, b: 1, a: 1}
 --- !u!4 &1461815111
 Transform:
